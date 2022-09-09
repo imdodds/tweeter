@@ -1,0 +1,45 @@
+body,html{
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 120px;
+  background-color: #4056A1;
+}
+
+.logo{
+  display: flex;
+  flex-direction: row;
+  font-family: 'Bungee', cursive;
+  font-size: 50px;
+  color: #FFFFFF;
+  margin-left: 1.53em;
+  margin-top: 0.53em;
+}
+
+.icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: red;
+}
+
+.header{
+  display: flex;
+  flex-direction: row-reverse;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  color: #FFFFFF;
+}
+
+.right-side{
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.53em;
+  margin-top: 1.53em;
+}
