@@ -1,0 +1,26 @@
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 520px;
+  width: 100%;
+  background-color: blanchedalmond;
+}
+
+.avatar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background{
+  height: 520px;
+  width: 100%;
+  position: fixed;
+}
