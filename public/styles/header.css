@@ -1,5 +1,6 @@
 .header{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 520px;
@@ -9,12 +10,15 @@
 
 .avatar{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: space-around;
   justify-content: center;
+  margin-top: 120px;
 }
 
 .name{
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -22,5 +26,6 @@
 .background{
   height: 520px;
   width: 100%;
+  background: "/images/45-degree-fabric-light.png";
   position: fixed;
 }
