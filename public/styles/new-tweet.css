@@ -12,6 +12,13 @@
   font-family: 'Bungee', cursive;
 }
 
+.redCounter{
+  color: red;
+}
+.blackCounter{
+  color: black;
+}
+
 .tweet-btn{
   display: flex;
   justify-content: flex-start;
