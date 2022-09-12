@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -54,7 +55,19 @@
 
   <!-- Page-specific (main) content here -->
   <main>
-    <p>Chase ball of string eat plants, meow, and throw up because I ate plants going to catch the red dot today going to catch the red dot today. I could pee on this if I had the energy. Chew iPad power cord steal the warm chair right after you get up for purr for no reason leave hair everywhere, decide to want nothing to do with my owner today.</p>
+
+    <section class="new-tweet">
+      <form action="/tweets/" method="POST">
+        <label for="tweet-text" class="border-bottom">What are you humming about?</label>
+        <br><br>
+        <textarea name="text" id="tweet-text"></textarea>
+          <span>
+            <button type="submit" class="tweet-btn">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </span>
+      </form>
+    </section>
+
   </main>
 </body>
 
