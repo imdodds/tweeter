@@ -43,7 +43,7 @@
     </span>
     <div class="right-side">
       <h1>Write a new tweet</h1>
-      <div class="icon">
+      <div class="nav-icon">
         <i class="fa-solid fa-angles-down"></i>
       </div>
     </div>
@@ -59,15 +59,42 @@
   <main>
     <section class="new-tweet">
       <form action="/tweets/" method="POST">
-        <label for="tweet-text" class="border-bottom">What are you humming about?</label>
-        <br><br>
+        <br>
+        <label for="tweet-text">What are you humming about?</label>
+        <br>
         <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <span>
+        <br><br>
+        <div>
+          <span>
             <button type="submit" class="tweet-btn">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
-            </span>
-          </div>
+          </span>
+        </div>
+        <br>
+        <section>
+          <article>
+            <header>
+              <span>
+                <div>
+                  <i class="fa-solid fa-user"></i>
+                  Newton
+                </div>
+                <div>@SirIsaac</div>
+              </span>
+            </header>
+            <p>
+              If I have seen further it is by standing on the shoulders of giants
+            </p>
+            <footer>
+              <p>10 days ago</p>
+              <div>
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-solid fa-heart"></i>
+              </div>
+            </footer>
+          </article>
+        </section>
       </form>
     </section>
   </main>
