@@ -30,7 +30,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="/scripts/client.js" defer></script>
   <script type="text/javascript" src="/scripts/composer-char-counter.js" defer></script>
 
 </head>
@@ -71,29 +71,9 @@
           </span>
         </div>
         <br>
-        <section>
-          <article>
-            <header>
-              <span>
-                <div>
-                  <i class="fa-solid fa-user"></i>
-                  Newton
-                </div>
-                <div>@SirIsaac</div>
-              </span>
-            </header>
-            <p>
-              If I have seen further it is by standing on the shoulders of giants
-            </p>
-            <footer>
-              <p>10 days ago</p>
-              <div>
-                <i class="fa-solid fa-flag"></i>
-                <i class="fa-solid fa-retweet"></i>
-                <i class="fa-solid fa-heart"></i>
-              </div>
-            </footer>
-          </article>
+
+        <!-- Individual Tweets -->
+        <section class="tweets-container">
         </section>
       </form>
     </section>
