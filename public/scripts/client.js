@@ -4,8 +4,10 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// const dataHelpers = require("../../server/lib/data-helpers");
 
-$(document).ready(function(){
+
+$(document).ready(function () {
 
   const data = [
     {
@@ -24,22 +26,23 @@ $(document).ready(function(){
       "user": {
         "name": "Descartes",
         "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
+        "handle": "@rd"
+      },
       "content": {
         "text": "Je pense , donc je suis"
       },
       "created_at": 1461113959088
     }
   ]
-  
-  const createTweetElement = function(tweet) {
-  
+
+  const createTweetElement = function (tweet) {
+
     let tweetMessage = tweet.content.text;
     let user = tweet.user.name;
     let handle = tweet.user.handle;
     let datePosted = tweet.created_at;
     let avatar = tweet.user.avatars;
-  
+
     let $tweet = $(`<article>
                       <header>
                         <span>
@@ -63,12 +66,12 @@ $(document).ready(function(){
                       </footer>
                       </article>
                       <br>`);
-  
+
     return $tweet;
-  
+
   };
-  
-  const renderTweets = function(tweets) {
+
+  const renderTweets = function (tweets) {
     // loops through tweets
     for (let i = 0; i < tweets.length; i++) {
       // calls createTweetElement for each tweet
@@ -76,11 +79,23 @@ $(document).ready(function(){
       $(".tweets-container").append(createTweetElement(tweets[i]));
     }
   };
-  
+
+
+  // New Tweet Event Handler
+  $('.tweet-form').on('submit', function (event) {
+    event.preventDefault()
+
+    const data = $(this).serialize()
+    $.post("/tweets", data)
+      .then(() => {
+        console.log("Post complete!");
+        console.log("Data:", data);
+      })
+
+  });
+
+
   renderTweets(data);
-  
+
 });
-
-
-// Fake data taken from initial-tweets.json
 
