@@ -43,7 +43,7 @@ $(document).ready(function () {
     let tweetMessage = tweet.content.text;
     let user = tweet.user.name;
     let handle = tweet.user.handle;
-    let datePosted = tweet.created_at;
+    let datePosted = timeago.format(tweet.created_at);
     let avatar = tweet.user.avatars;
 
     let $tweet = $(`<article>
