@@ -37,7 +37,6 @@ $(document).ready(function () {
   ]
   */
 
-
   const createTweetElement = function (tweet) {
 
     let tweetMessage = tweet.content.text;
@@ -75,46 +74,39 @@ $(document).ready(function () {
   };
 
   const renderTweets = function (tweets) {
+    $(".tweets-container").empty();
     // loops through tweets
     for (let i = 0; i < tweets.length; i++) {
       // calls createTweetElement for each tweet
-      // takes return value and appends it to the tweets container
-      $(".tweets-container").append(createTweetElement(tweets[i]));
+      // takes return value and prepends it to the tweets container
+      $(".tweets-container").prepend(createTweetElement(tweets[i]));
     }
   };
 
   // New Tweet Event Listener
   $('.tweet-form').on('submit', function (event) {
     event.preventDefault()
-    const data = $(this).serialize()
 
     // Form Validation
-    if (data === "" || data === null) {
+    if (!$("textarea").val()) {
       alert("Invalid submission");
-    } else if (data.length > 140) {
+    } else if ($("textarea").val().length > 140) {
       alert("Tweet must not exceed 140 characters");
     } else {
+      const data = $(this).serialize()
       $.post("/tweets", data)
-      .then(() => {
-        console.log("Post complete!");
-        console.log("data:", data);
-        loadTweets();
-      })
+        .then(() => {
+          loadTweets();
+        })
     }
-
   });
 
   const loadTweets = function () {
 
-    // fetch tweets from tweets page
-    // use jquery to make a GET request to /tweets
-    // receive an array of tweets as JSON 
-  
-      $.get("/tweets")
-        .then((data) => {
-          // console.log("data:", data)
-          renderTweets(data);
-        });
+    $.get("/tweets")
+      .then((data) => {
+        renderTweets(data);
+      });
   };
 
   loadTweets();
