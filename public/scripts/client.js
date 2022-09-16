@@ -87,11 +87,20 @@ $(document).ready(function () {
   $('.tweet-form').on('submit', function (event) {
     event.preventDefault()
     const data = $(this).serialize()
-    $.post("/tweets", data)
+
+    // Form Validation
+    if (data === "" || data === null) {
+      alert("Invalid submission");
+    } else if (data.length > 140) {
+      alert("Tweet must not exceed 140 characters");
+    } else {
+      $.post("/tweets", data)
       .then(() => {
-        // console.log("Post complete!");
+        console.log("Post complete!");
+        console.log("data:", data);
         loadTweets();
       })
+    }
 
   });
 
@@ -103,7 +112,7 @@ $(document).ready(function () {
   
       $.get("/tweets")
         .then((data) => {
-          console.log("data:", data)
+          // console.log("data:", data)
           renderTweets(data);
         });
   };
