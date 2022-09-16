@@ -9,6 +9,7 @@
 
 $(document).ready(function () {
 
+  /*
   const data = [
     {
       "user": {
@@ -34,6 +35,8 @@ $(document).ready(function () {
       "created_at": 1461113959088
     }
   ]
+  */
+
 
   const createTweetElement = function (tweet) {
 
@@ -80,22 +83,31 @@ $(document).ready(function () {
     }
   };
 
-
-  // New Tweet Event Handler
+  // New Tweet Event Listener
   $('.tweet-form').on('submit', function (event) {
     event.preventDefault()
-
     const data = $(this).serialize()
     $.post("/tweets", data)
       .then(() => {
-        console.log("Post complete!");
-        console.log("Data:", data);
+        // console.log("Post complete!");
+        loadTweets();
       })
 
   });
 
+  const loadTweets = function () {
 
-  renderTweets(data);
+    // fetch tweets from tweets page
+    // use jquery to make a GET request to /tweets
+    // receive an array of tweets as JSON 
+  
+      $.get("/tweets")
+        .then((data) => {
+          console.log("data:", data)
+          renderTweets(data);
+        });
+  };
+
+  loadTweets();
 
 });
-
