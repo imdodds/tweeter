@@ -37,9 +37,15 @@ $(document).ready(function () {
   ]
   */
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function (tweet) {
 
-    let tweetMessage = tweet.content.text;
+    let tweetMessage = `<p>${escape(tweet.content.text)}</p>`;
     let user = tweet.user.name;
     let handle = tweet.user.handle;
     let datePosted = timeago.format(tweet.created_at);
@@ -55,9 +61,9 @@ $(document).ready(function () {
                           <div>${handle}</div>
                         </span>
                       </header>
-                      <p>
+                      <div>
                         ${tweetMessage}
-                      </p>
+                      </div>
                       <footer>
                         <p>${datePosted}</p>
                         <div>
