@@ -38,3 +38,11 @@ form div span {
 .red-counter {
   color: #FF0000;
 }
+
+.error {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #FF0000;
+  border: 3px solid #FF0000;
+}

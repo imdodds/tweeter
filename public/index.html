@@ -60,6 +60,8 @@
   <main>
     <section class="new-tweet">
       <form class="tweet-form" action="/tweets/" method="POST">
+        <div class="error" id="invalid-error" style="display:none">Invalid Submission</div>
+        <div class="error" id="length-error" style="display:none">Tweet must not exceed 140 characters</div>
         <br>
         <label for="tweet-text">What are you humming about?</label>
         <br>

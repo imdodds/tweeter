@@ -95,10 +95,15 @@ $(document).ready(function () {
 
     // Form Validation
     if (!$("textarea").val()) {
-      alert("Invalid submission");
+      // Display Error
+      $("#invalid-error").slideDown(1000);
+      // alert("Invalid submission");
     } else if ($("textarea").val().length > 140) {
-      alert("Tweet must not exceed 140 characters");
+      // Display Error
+      $("#length-error").slideDown(1000);
+      // alert("Tweet must not exceed 140 characters");
     } else {
+
       const data = $(this).serialize()
       $.post("/tweets", data)
         .then(() => {
