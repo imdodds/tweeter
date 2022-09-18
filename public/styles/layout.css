@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -16,7 +19,8 @@ html {
 
 body {
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
+  ;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -38,7 +42,7 @@ main {
 article {
   display: flex;
   flex-direction: column;
-  padding: 1em; 
+  padding: 1em;
   border: 2px solid;
 }
 
@@ -46,7 +50,7 @@ article:hover {
   box-shadow: 5px 5px 12px 0px #ad58ad;
 }
 
-article header span{
+article header span {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -78,4 +82,23 @@ article footer div {
 
 article footer div i:hover {
   color: #ad58ad;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+
+  body {
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 3em;
+    row-gap: 3em;
+    overflow: none;
+  }
+
+  main {
+    float: right;
+    width: 67%;
+    position: relative;
+    top: 120px;
+  }
 }

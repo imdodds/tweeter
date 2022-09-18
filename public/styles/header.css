@@ -1,31 +1,46 @@
-.header{
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 520px;
-  width: 100%;
-  background-color: blanchedalmond;
+  background-color: #ffa600f9;
 }
 
-.avatar{
+.avatar {
   display: flex;
   flex-direction: column;
   align-items: space-around;
-  justify-content: center;
   margin-top: 120px;
 }
 
-.name{
+.name {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  color: #FFFFFF;
 }
 
-.background{
+.background {
   height: 520px;
   width: 100%;
-  background: "/images/45-degree-fabric-light.png";
   position: fixed;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+  .header {
+    float: left;
+    position: relative;
+    margin-left: 1em;
+    width: 100%;
+    top: 100px;
+  }
+
+  .avatar {
+    align-items: center;
+    margin-top: 160px;
+  }
+
+  .name {
+    flex-direction: column-reverse;
+  }
 }

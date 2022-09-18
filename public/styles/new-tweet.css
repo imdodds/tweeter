@@ -17,7 +17,7 @@ textarea {
 }
 
 form div span {
-  display:flex;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -45,4 +45,15 @@ form div span {
   text-align: center;
   color: #FF0000;
   border: 3px solid #FF0000;
+}
+
+
+/* Desktop Styles */
+@media only screen and (min-width: 1024px) {
+  .tweet-form {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    width: 67%;
+  }
 }
