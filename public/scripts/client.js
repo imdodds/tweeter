@@ -1,19 +1,14 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 
 $(document).ready(function () {
 
-
+  // escape bad text to prevent cross-site scripting
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  // Format Tweet object into HTML <article>
   const createTweetElement = function (tweet) {
 
     let tweetMessage = `<p>${escape(tweet.content.text)}</p>`;
@@ -50,6 +45,7 @@ $(document).ready(function () {
 
   };
 
+  // Render Tweets
   const renderTweets = function (tweets) {
     $(".tweets-container").empty();
     for (let i = 0; i < tweets.length; i++) {
@@ -58,7 +54,7 @@ $(document).ready(function () {
   };
 
   // New Tweet Event Listener
-  $('.tweet-form').on('submit', function (event) {
+  $(".tweet-form").on("submit", function (event) {
     event.preventDefault()
 
     // Form Validation
@@ -74,10 +70,13 @@ $(document).ready(function () {
       $.post("/tweets", data)
         .then(() => {
           loadTweets();
+          $(this).find("#tweet-text").val(""); // clear text area
+          $(this).find(".counter").val(140); // clear counter
         })
     }
   });
 
+  // Load Tweets
   const loadTweets = function () {
 
     $.get("/tweets")

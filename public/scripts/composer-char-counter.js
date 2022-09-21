@@ -1,7 +1,5 @@
 $(document).ready(function() {
 
-  // console.log("Ready!");
-
   const tweetText = document.getElementById('tweet-text');
 
   tweetText.addEventListener('input', function() {
