@@ -56,6 +56,9 @@ $(document).ready(function () {
   // New Tweet Event Listener
   $(".tweet-form").on("submit", function (event) {
     event.preventDefault()
+    // Clear Error Message
+    $("#invalid-error").slideUp(1000);
+    $("#length-error").slideUp(1000);
 
     // Form Validation
     if (!$("textarea").val()) {

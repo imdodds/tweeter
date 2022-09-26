@@ -16,5 +16,8 @@ Tweeter is a single-page Twitter clone, where users can create short posts of up
 
 ## Dependencies
 
-- Express
-- Node 5.10.x or above
+* Express
+* Node 5.10.x or above
+* body-parser
+* chance
+* md5
